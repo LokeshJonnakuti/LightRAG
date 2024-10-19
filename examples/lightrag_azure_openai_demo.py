@@ -104,11 +104,10 @@ rag = LightRAG(
         func=embedding_func,
     ),
 )
-
-book1 = open("./book_1.txt", encoding="utf-8")
-book2 = open("./book_2.txt", encoding="utf-8")
-
-rag.insert([book1.read(), book2.read()])
+with open("./book_1.txt", encoding="utf-8") as book1:
+    with open("./book_2.txt", encoding="utf-8") as book2:
+        
+        rag.insert([book1.read(), book2.read()])
 
 query_text = "What are the main themes?"
 
