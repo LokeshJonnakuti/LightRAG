@@ -106,7 +106,6 @@ rag = LightRAG(
 )
 with open("./book_1.txt", encoding="utf-8") as book1:
     with open("./book_2.txt", encoding="utf-8") as book2:
-        
         rag.insert([book1.read(), book2.read()])
 
 query_text = "What are the main themes?"
